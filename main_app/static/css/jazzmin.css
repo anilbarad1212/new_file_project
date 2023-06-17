@@ -1,0 +1,26 @@
+/* body.theme-journal p {
+    color: pink;
+} */
+.sidebar-nav {
+  width: 300px  !important;
+}
+
+.img-circle {
+  width: 50px; /* adjust the value as needed */
+  height: 50px; /* adjust the value as needed */
+}
+
+.login-logo img{
+  width: 300px;
+  margin-bottom: 20px;  
+}
+
+.sidebar-mini.sidebar-collapse .sidebar .user-panel>.info{
+  width: 0px;
+    display: none;
+}
+
+.sidebar-mini.sidebar-collapse .main-sidebar:hover .user-panel>.info{
+  width: auto;
+  display: block;
+}

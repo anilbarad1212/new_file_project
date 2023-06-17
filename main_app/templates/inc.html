@@ -1,0 +1,348 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Data Tags -->
+  <meta charset="UTF-8">
+  <meta name='robots' content='noindex'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Jaanviebooks"/>
+  <meta property="og:site_name" content="Eduindialive">
+  <meta property="og:image" content="https://eduindialive.com/{% static 'img/logo/favicon.png' %}"/>
+  <meta property="og:description" content="Eduindia Live is a platform to learn and share knowledge about education."/>
+  <meta property="og:url" content="https://eduindialive.com" >
+
+
+  <!-- Site Favicon -->
+  <link rel="icon" href="{% static 'img/logo/favicon.jpg' %}">
+
+  <!-- Site Title -->
+  <title>{% block title %}{% endblock title %}</title>
+
+  <!-- Site fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+
+
+  <!-- Icons CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Site Css -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=22">
+  <link rel="stylesheet" href="{% static 'css/common-form.css' %}?v=2">
+  <link rel="stylesheet" href="{% static 'css/sign-in-up.css' %}?v=3">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}?v=17">
+
+</head>
+
+<body>
+
+  <!-- website loader  -->
+  <section class="web-loader">
+    <span>
+      <img src="{% static 'img/logo/favicon.png' %}" alt="">
+    </span>
+  </section>
+
+  <!-- Website Header -->
+  <header class="main-header">
+    <!-- site logo -->
+    <a class="logo-link" href="{% url 'home'%}">
+      <img class="main-logo" src="{% static 'img/logo/logo-2.png' %}" alt="">
+      <img class="responsive-logo-img" src="{% static 'img/logo/logo.png' %}" alt="">
+    </a>
+
+    <!-- header-right-bx -->
+    <div class="header-right-bx">
+      <div class="hrb-epo-links">
+        <!-- <a href="tel:+916351107800" title="6351107800"><img src="{% static 'img/customer-care.png' %}" alt=""><span>6351107800</span></a> -->
+        <a href="mailto:info@Jaanviebooks.com" title="info@Jaanviebooks.com"><img src="{% static 'img/gmail.png' %}" alt=""><span>{% if request.user.is_authenticated %} {{request.user.email}} {% else %} info@Jaanviebooks.com {% endif %}</span></a>
+      </div>
+      <div class="hrb-btns-bx" id="login-logout-data">
+        <!-- data-toggle="modal" data-target="#freedemoModal" -->
+        <a class="hrb-btn free-demo-btn" title="Our Courses" target="_blank" href="https://classrooms.eduindialive.com/"><i class='bx bx-book'></i><span>Our Courses</span></a>
+        <a class="hrb-btn login-up-btn" title="Login" href="javascript:void(0);" data-toggle="modal" data-target="#signinup-popup"><i class='bx bx-user'></i><span>Register</span></a>
+        
+        <!-- <div class="hrb-btn login-up-btn" title="My Account"><i class='bx bx-user'></i><span>Login</span>
+          <ul class="signupdrop-down">
+            <li><a href="javascript:void(0);"><ion-icon name="list-outline"></ion-icon>My Audio</a></li>
+            <li><a href="javascript:void(0);"><ion-icon name="power-outline"></ion-icon>Logout</a></li>
+          </ul>
+        </div> -->
+
+      </div>
+
+
+
+    
+
+      <div class="hrb-icon-bx">
+        <img class="hrb-icon-img" src="{% static 'img/translate.png' %}" alt="">
+        <div class="hrb-icons-dropdown">
+          <h6>Choose a Language</h6>
+          <!-- <span class="dismiss closes-bgcb" style="top:10px;width:13px;height:13px" >
+                    <span class="closes"></span>
+                    <span class="closes"></span>
+                </span> -->
+          <div id="google_translate_element"></div>
+          <script>
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                autoDisplay: false,
+                includedLanguages: 'en,gu,hi,te,ta,bn,ur,bh,ml,mr,pa',
+              },
+                'google_translate_element'
+              );
+            }
+          </script>
+        </div>
+      </div>
+
+      <!-- <a href="javascript:void(0);" class="hrb-icon-bx">
+        <img class="hrb-icon-img" src="{% static 'img/playstore.webp' %}" alt="">
+      </a> -->
+
+      <!-- menu icon -->
+      <div class="menu-icon-bx">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- responsive menu -->
+<section id="sidebar">
+  <div class="res-sidemenu-logo">
+      <span class="close-icon left-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"  stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+          </svg>
+      </span>
+      <!-- <a href="{% url 'home'%}">
+          <img src="{% static 'img/logo/logo-2.png' %}" alt="">
+      </a> -->
+  </div>
+
+  <div class="slidemenu">
+    <ul>
+        <li><a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'home'%}"><span><ion-icon class="sidemenu-menu-icon" name="home-outline"></ion-icon>Home</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link" href="https://classrooms.eduindialive.com/" target="_blank"><span><ion-icon class="sidemenu-menu-icon" name="book-outline"></ion-icon>Our Courses</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link {% if request.path == '/about/' %} active {% endif %}" href="{% url 'about'%}"><span><ion-icon class="sidemenu-menu-icon" name="person-outline"></ion-icon>About</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link {% if request.path == '/vision/' %} active {% endif %}" href="{% url 'vision'%}"><span><ion-icon class="sidemenu-menu-icon" name="eye-outline"></ion-icon>Vision</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <!-- <li><a class="nav-link {% if request.path == '/services/' %} active {% endif %}" href="{% url 'services'%}"><span><ion-icon class="sidemenu-menu-icon" name="document-text-outline"></ion-icon>Services</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->
+        <!-- <li><a class="nav-link {% if request.path == '/privacy-policy/' %} active {% endif %}" href="{% url 'privacy-policy'%}"><span><ion-icon class="sidemenu-menu-icon" name="document-text-outline"></ion-icon>Privacy Policy</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link {% if request.path == '/terms-conditions/' %} active {% endif %}" href="{% url 'terms-conditions'%}"><span><ion-icon class="sidemenu-menu-icon" name="document-text-outline"></ion-icon>Terms & Conditions</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->
+        <li><a class="nav-link {% if request.path == '/privacy-policy/' %} active {% endif %}" href="javascript:void(0);"><span><ion-icon class="sidemenu-menu-icon" name="document-text-outline"></ion-icon>Privacy Policy</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link {% if request.path == '/terms-conditions/' %} active {% endif %}" href="javascript:void(0);"><span><ion-icon class="sidemenu-menu-icon" name="document-text-outline"></ion-icon>Terms & Conditions</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link {% if request.path == '/contact/' %} active {% endif %}" href="{% url 'contact'%}"><span><ion-icon class="sidemenu-menu-icon" name="call-outline"></ion-icon>Contact</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link {% if request.path == '/sitemap/' %} active {% endif %}" href="{% url 'sitemap'%}"><span><ion-icon  class="sidemenu-menu-icon" name="link-outline"></ion-icon>Sitemap</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+  
+  <div class="side-menu-footer">
+      <div class="smf-epo-link" id="login-link">
+          <!-- <a href="tel:+916351107800" title="6351107800"><img src="{% static 'img/customer-care.png' %}" alt=""><span>6351107800</span></a> -->
+          <a  href="mailto:info@Jaanviebooks.com" title="info@Jaanviebooks.com"><img src="{% static 'img/gmail.png' %}" alt=""><span>info@Jaanviebooks.com</span></a>
+      </div>
+
+      <ul class="social-bx">
+          <a href="javascript:void(0);" class="icon-fb"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="javascript:void(0);" class="icon-tw"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="javascript:void(0);" class="icon-insta"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="javascript:void(0);" class="icon-lin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="javascript:void(0);" class="icon-yt"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      </ul>
+  </div>
+</section>
+
+  <section class="pagedownarea">
+  {% block designsection %}{% endblock designsection %}
+  </section>
+
+  <!-- footer -->
+  <footer class="pt-4 pb-3 main-footer ofh">
+    <div class="container-lg pr">
+      <ul class="footer-ul-link">
+        <li><a class="{% if request.path == '/' %} active {% endif %}" href="{% url 'home'%}">Home</a></li>
+        <li><a class="{% if request.path == '/about/' %} active {% endif %}" href="{% url 'about'%}">About</a></li>
+        <li><a class="{% if request.path == '/vision/' %} active {% endif %}" href="{% url 'vision'%}">Vision</a></li>
+        <!-- <li><a class="{% if request.path == '/services/' %} active {% endif %}" href="{% url 'services'%}">Services</a></li> -->
+        <!-- <li><a class="{% if request.path == '/privacy-policy/' %} active {% endif %}" href="{% url 'privacy-policy'%}">Privacy Policy</a></li>
+        <li><a class="{% if request.path == '/terms-conditions/' %} active {% endif %}" href="{% url 'terms-conditions'%}">Terms & Conditions</a></li> -->
+        <li><a class="{% if request.path == '/privacy-policy/' %} active {% endif %}" href="javascript:void(0);">Privacy Policy</a></li>
+        <li><a class="{% if request.path == '/terms-conditions/' %} active {% endif %}" href="javascript:void(0);">Terms & Conditions</a></li>
+        <li><a class="{% if request.path == '/contact/' %} active {% endif %}" href="{% url 'contact'%}">Contact</a></li>
+        <li><a class="{% if request.path == '/sitemap/' %} active {% endif %}" href="{% url 'sitemap'%}">Sitemap</a></li>
+      </ul>
+      <!-- <p class="footer-address"><i class='bx bx-map'></i>PM Communications, 6th Floor, Zydus Tower, Astron Tower, Iskcon Cross Rd, Satellite, Ahmedabad, Gujarat 380015</p> -->
+      <ul class="footer-ul-link">
+        <!-- <li class="mt-1"><a style="font-size: 18px;" href="tel:+916351107800"><i class='bx bx-phone-call'></i>6351107800</a></li> -->
+        <li class="mt-1"><a style="font-size: 18px;" href="mailto:info@Jaanviebooks.com"><i class='bx bx-mail-send'></i>info@Jaanviebooks.com</a></li>
+      </ul>
+      <ul class="social-bx" style="position: relative;padding: 0;margin-bottom: 20px;text-align: center;">
+        <a href="javascript:void(0);" class="icon-fb"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" class="icon-tw"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" class="icon-insta"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" class="icon-lin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="javascript:void(0);" class="icon-yt"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      </ul>
+
+      <div class="row justify-content-center align-items-center mt-1">
+        <div class="col-lg-6 text-center text-lg-left">
+          <p class="copyright">© Copyrights Jaanviebooks 2023. All Rights Reserved</p>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right ">
+          <p class="mede-with">Made with <span class="icons-box-made"><i class="fa fa-heart" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i></span> by: <a href="https://pmcommu.com/" target="_blank">PM Communications</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Website Whatapp Chat Icon -->
+  <div class="whatapp-new-icon">
+      <!-- <a href="https://api.whatsapp.com/send?phone=+916351107800&amp;text=Hello" target="_blank"> -->
+        <!-- <div class="whatapp-meg">WhatsApp with a JOTBOTO Expert for a one-on-one consultation.</div> -->
+        <div class="whatapp-meg active">Talk to Jaanviebooks</div>
+        <img src="{% static 'img/whatsapp-icon.svg' %}" alt="">
+    </a>
+  </div>
+
+  <!-- Website Common Overlay -->
+  <div class="common-overlay"></div>
+
+  <!-- Website Common Flesh Message -->
+  <div class="flash-message sf-msg comman-sucses-message">
+      <!-- <div class="flash-message-inner">
+          <span class="msg-close">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"></path></svg>
+          </span>
+          <img class="flash-img" src="{% static 'img/right.png' %}">
+          <div class="flash-text">
+              <h6>Success</h6>
+              <p id="sf-msg-success">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero odit ex minima non reiciendis, beatae cupiditate maxime sunt ducimus autem? Amet.</p>
+          </div>
+      </div> -->
+  </div>
+
+  <div class="flash-message ef-msg comman-error-message">
+      <!-- <div class="flash-message-inner">
+          <span class="msg-close">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"></path></svg>
+          </span>
+          <img class="flash-img" src="{% static 'img/cross.png' %}">
+          <div class="flash-text">
+              <h6>Error</h6>
+              <p id="ef-msg-error"></p>
+          </div>
+      </div> -->
+  </div>
+  <div class="flash-message-popup"></div>
+
+
+
+  <!-- ======================
+    Modals & Popup HTML Start
+  ======================= -->
+
+  <!-- freedemoModal -->
+  <div class="modal fade" id="freedemoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered px-2" role="document" style="max-width: 410px;margin: 24px auto;width: 100%;">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <span class="close-icon" data-dismiss="modal" aria-label="Close">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"  stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+              </svg>
+          </span>
+          <div class="freedemopopup-bx">
+              <h3>Apply for Free Demo</h3>
+              <p>See How Jaanviebooks Can Make A Difference!</p>
+              <form class="row mx-0">
+                
+                <div class="custom-form__group col-12">
+                    <select placeholder=" ">
+                        <option>Select Subject</option>
+                        <option value="hindi">Hindi</option>                  
+                        <option value="english">English</option>
+                        <option value="social-science">Social Science</option>
+                    </select>
+                    <label class="group__label">Your Subject</label>
+                </div>
+  
+                <div class="custom-form__group col-12">
+                    <select  placeholder=" ">
+                        <option>Select Standard</option>
+                        <option value="9" >9</option>
+                        <option value="10" >10</option>
+                        <option value="11" >11</option>
+                        <option value="12" >12</option>            
+                    </select>
+                    <label class="group__label">Your Standard</label>
+                </div>
+  
+                <button type="button" class="common-btn mt-2" ><span>Proceed</span></button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if not 'login' in request.path %}
+  <!-- signinup-popup -->
+  <div class="modal fade" id="signinup-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="signinup-popup">
+          {% include 'signinup.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- ======================
+    Modals & Popup HTML End
+  ======================= -->
+
+
+  <!-- Website Icon Script -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
+
+  <!-- Website Script -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+  <script src="{% static 'js/animate.js' %}"></script>
+  <script src="{% static 'js/generate_uuid.js' %}"></script>
+  <script src="{% static 'js/main.js' %}?v=2"></script>
+  <!-- <script src="{% static 'js/lightgallery.min.js' %}"></script> -->
+  <!-- <script src="{% static 'js/plugins/lg-fullscreen.umd.js' %}"></script>
+  <script src="{% static 'js/plugins/lg-video.min.js' %}"></script> -->
+  <script src="{% static 'js/animate.js' %}?v=10"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}?v=11"></script>
+  <script src="{% static 'js/bootstrapValidator.min.js' %}?v=12"></script>
+  <script src="{% static 'js/owl.carousel.js' %}?v=13"></script>
+  <script src="{% static 'js/jquery.ripples-min.js' %}?v=14"></script>
+  <script src="{% static 'js/script.js' %}?v=16"></script>
+  <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+  <!-- <script src="{% static 'js/bootstrapValidator.min.js' %}"></script> -->
+  <!-- <script src="{% static 'js/owl.carousel.js' %}"></script> -->
+  <!-- <script src="{% static 'js/jquery.ripples-min.js' %}"></script> -->
+  <!-- <script src="{% static 'js/script.js' %}?v=18"></script> -->
+
+</body>
+
+</html>

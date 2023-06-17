@@ -1,0 +1,747 @@
+/* --- 
+Sign In Up Back Btn Css
+--- */
+.sign-back-btn {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 18px auto 0;
+    display: block;
+    color: #63788A;
+    font-family: 'Nunito', sans-serif;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.sign-back-btn:hover {
+    color: #000;
+    background: #00000012;
+}
+
+.sign-back-btn svg {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -1px;
+    left: -2px;
+}
+
+/* --- 
+login page css
+--- */
+
+/* --- 
+Sign In Up
+--- */
+
+.sign-in-up-bx>*,
+.sign-in-up-bx {
+    font-family: 'Nunito', sans-serif;
+}
+
+.sign-in-up-bx {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* justify-content: center; */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px 0;
+}
+
+.sign-in-up-bx::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    /* background-color: #0000000d; */
+    z-index: -1;
+}
+
+/* --- 
+Sign In Up Logo Img Css 
+--- */
+.sign-in-up-bx .seconde-screen>.logo-img,
+.sign-in-up-bx .first-screen>.logo-img {
+    display: block;
+    width: 80px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sign-in-up-bx .seconde-screen>.logo-img img,
+.sign-in-up-bx .first-screen>.logo-img img {
+    width: 100%;
+}
+
+.sign-in-up-bx .seconde-screen>.logo-img{
+    margin-bottom: 20px;
+    margin-top: -40px;
+}
+
+/* --- 
+Sign In Up Site Info Css 
+--- */
+.sign-in-up-bx .site-info {
+    font-size: 14px;
+    color: #63788A;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.7;
+    font-family: 'Nunito', sans-serif;
+}
+
+.sign-in-up-bx .site-info span {
+    display: inline-block;
+    width: 12px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.sign-in-up-bx .site-info a {
+    display: inline-block;
+    color: #63788A;
+    font-family: 'Nunito', sans-serif;
+}
+
+.sign-in-up-bx .site-info a:hover {
+    color: #124ca0;
+    text-decoration: underline;
+}
+
+
+/* ---
+Sign-In-Up Login Commun Btn
+--- */
+
+.login-commun-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 12px 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 600;
+    color: #1c2b33;
+    font-size: 17px;
+    margin: 15px 0;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.login-commun-btn::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #0000001a;
+    z-index: 1;
+    opacity: 0;
+}
+
+.login-commun-btn svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+    margin-right: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.login-commun-btn span {
+    position: relative;
+    z-index: 2;
+    font-family: 'Nunito', sans-serif;
+    display: block;
+    top: 1px;
+}
+
+.login-commun-btn.facebook-btn {
+    background-color: #2D88FF;
+    color: #fff;
+}
+
+.login-commun-btn.instagram-btn {
+    background-color: #fff;
+    color: #1c2b33;
+}
+
+.login-commun-btn.google-btn {
+    background-color: #ea4436;
+    color: #fff;
+}
+
+.login-commun-btn.sign-up-btn {
+    color: #fff;
+    background-color: #1c2b33;
+}
+
+.login-commun-btn.forgotten-btn,
+.login-commun-btn.sign-in-btn {
+    color: hwb(201 11% 80%);
+    background-color: transparent;
+}
+
+.login-commun-btn.s-n-btn {
+    background-color: #2D88FF;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.box-border {
+    -webkit-box-shadow: 0 0 0 1px #1c2b3342;
+            box-shadow: 0 0 0 1px #1c2b3342;
+}
+
+.login-commun-btn:hover::after {
+    opacity: 1;
+}
+
+
+/* ---
+Screen Trigger Css
+--- */
+.screen-trigger {
+    display: none;
+}
+
+.screen-trigger.active {
+    display: block;
+}
+
+/* ---
+First Screen Css
+--- */
+.first-screen {
+    width: 100%;
+    padding: 20px 20px;
+    margin: auto;
+}
+
+/* ---
+Screen heading
+--- */
+.screen-hed {
+    color: #1c2b33;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.screen-pera {
+    color: #1c2b33;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ---
+Seconde Screen
+--- */
+.seconde-screen {
+    background: -o-linear-gradient(45deg, #f0f6fe, #faf1fa);
+    background: linear-gradient(45deg, #f0f6fe, #faf1fa);
+    background-repeat: no-repeat;
+    min-height: 420px;
+    width: 100%;
+    -webkit-box-shadow: 0 0 20px #0000002e;
+            box-shadow: 0 0 20px #0000002e;
+    border-radius: 5px;
+    position: relative;
+    padding: 60px 20px 20px;
+    margin: auto;
+}
+
+
+.seconde-screen .back-icon,
+.first-screen .sign-close-icon,
+.seconde-screen .sign-close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: #ff000000;
+    padding: 7px;
+    cursor: pointer;
+}
+
+
+.seconde-screen .back-icon:hover,
+.first-screen .sign-close-icon:hover,
+.seconde-screen .sign-close-icon:hover {
+    background: #0000000f;
+    color: #212529;
+}
+
+
+.seconde-screen .back-icon:active,
+.first-screen .sign-close-icon:active,
+.seconde-screen .sign-close-icon:active {
+    background: #00000024;
+    color: #212529;
+}
+
+.seconde-screen .back-icon {
+    left: 10px;
+    opacity: 0.8;
+}
+
+.seconde-screen .back-icon:hover,
+.seconde-screen .back-icon:active{
+    opacity: 1;
+}
+
+.seconde-screen .back-icon .back-text{
+    position: absolute;
+    left: 23px;
+    top: 0px;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    /* opacity: 0.5; */
+    background: transparent;
+    padding: 0 10px 0 5px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 0 50px 50px 0;
+}
+
+.seconde-screen .back-icon:hover .back-text{
+    background: #e7e5ec;
+}
+
+.seconde-screen .back-icon:active .back-text{
+    background: #d2d1d8;
+}
+
+.seconde-screen .sign-close-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.seconde-screen .back-icon svg {
+    position: relative;
+    left: -2px;
+}
+
+
+/* --- 
+Commun Form Css
+--- */
+.signinup-group {
+    margin-top: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.signinup-group {
+    position: relative;
+    margin: 10px 0 15px;
+}
+
+.signinup-group input {
+    font-weight: 600;
+    display: block;
+    color: #1c2b33;
+    border: 0;
+    font-size: 17px;
+    background-color: rgb(251 251 251);
+    border: 1.5px solid rgb(197, 197, 197);
+    width: 100%;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    padding: 25px 10px 10px 10px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.signinup-group input[type="password"] {
+    padding: 25px 40px 10px 10px;
+}
+
+.signinup-group .group__label {
+    position: absolute;
+    left: 12px;
+    top: 0px;
+    z-index: 1;
+    font-size: 18px;
+    color: #1c2b3380;
+    font-weight: 600;
+    margin: 0;
+    -webkit-transform: scale(1) translateY(18px);
+        -ms-transform: scale(1) translateY(18px);
+            transform: scale(1) translateY(18px);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.signinup-group input:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.signinup-group input:not(:-moz-placeholder-shown) {
+    border-color: #124ca0;
+    background-color: rgb(255, 255, 255);
+}
+
+.signinup-group input:not(:-ms-input-placeholder) {
+    border-color: #124ca0;
+    background-color: rgb(255, 255, 255);
+}
+
+.signinup-group input:focus,
+.signinup-group input:not(:placeholder-shown) {
+    border-color: #124ca0;
+    background-color: rgb(255, 255, 255);
+}
+
+.signinup-group input:not(:-moz-placeholder-shown)~.group__label {
+    transform: scale(.7) translateY(6px);
+    color: #124ca0;
+}
+
+.signinup-group input:not(:-ms-input-placeholder)~.group__label {
+    -ms-transform: scale(.7) translateY(6px);
+        transform: scale(.7) translateY(6px);
+    color: #124ca0;
+}
+
+.signinup-group input:not(:placeholder-shown)~.group__label,
+.signinup-group input:focus~.group__label {
+    -webkit-transform: scale(.7) translateY(6px);
+        -ms-transform: scale(.7) translateY(6px);
+            transform: scale(.7) translateY(6px);
+    color: #124ca0;
+}
+
+.remember-input {
+    cursor: pointer;
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px;
+    position: relative;
+    top: 0px;
+}
+
+.remember-lable {
+    cursor: pointer;
+    font-size: 14px;
+    color: #1c2b33;
+    position: relative;
+    bottom: 2.5px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.remember-lable:hover {
+    opacity: 1;
+}
+
+/* ---
+View Password Css
+--- */
+.signinup-group .view-pass {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #1c2b3380;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 40px;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.signinup-group .view-pass:hover {
+    color: #124ca0;
+}
+
+/* ---
+Input Autofill Css
+--- */
+.signinup-group input:-webkit-autofill,
+.signinup-group input:-webkit-autofill:hover,
+.signinup-group input:-webkit-autofill:focus,
+.signinup-group input:-webkit-autofill:active {
+    font-size: 17px !important;
+    font-family: 'Nunito', sans-serif !important;
+    box-shadow: 0 0 0 100px rgb(255 255 255) inset !important;
+    -webkit-box-shadow: 0 0 0 100px rgb(255 255 255) inset !important;
+}
+
+
+/* ---
+Create Detail Css
+--- */
+.create-detail {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+.create-detail h6 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1c2b3380;
+    margin-bottom: 1px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.create-detail p {
+    font-weight: 600;
+    display: block;
+    color: #1c2b33;
+    border: 0;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+.create-detail p.cdp {
+    -webkit-transform: scale(2.5);
+        -ms-transform: scale(2.5);
+            transform: scale(2.5);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+/* ---
+SignInUp Popup Css
+--- */
+#signinup-popup {
+    padding: 0 !important;
+    /* backdrop-filter: blur(5px); */
+}
+
+#signinup-popup .modal-dialog {
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    margin: auto;
+}
+
+#signinup-popup .modal-dialog .modal-content {
+    border: none;
+    background: none;
+    border-radius: 0;
+}
+
+/* .signinup-popup{
+    backdrop-filter: blur(5px);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+} */
+
+.signinup-popup .first-screen {
+    padding: 30px 20px;
+    position: relative;
+}
+
+.signinup-popup  .sign-back-btn,
+.popup-close-icon,
+.popup-login-img,
+.sign-in-up-bx .first-screen>.logo-img.popup-login-img,
+.sign-in-up-bx .seconde-screen>.logo-img.popup-login-img,
+.signinup-popup .sign-in-up-bx .first-screen>.logo-img,
+.signinup-popup .sign-in-up-bx .seconde-screen>.logo-img,
+.signinup-popup .sign-back-btn {
+    display: none;
+}
+
+
+.signinup-popup .sign-close-icon.popup-close-icon,
+.signinup-popup .sign-in-up-bx .seconde-screen>.logo-img.popup-login-img,
+.signinup-popup .sign-in-up-bx .first-screen>.logo-img.popup-login-img {
+    display: block;
+}
+
+.signinup-popup .sign-in-up-bx {
+    background: -o-linear-gradient(45deg, #f0f6fe, #faf1fa);
+    background: linear-gradient(45deg, #f0f6fe, #faf1fa);
+    padding: 0;
+    border-radius: 5px;
+    min-height: initial;
+}
+
+/* ---
+Form Error Message Css
+--- */
+.signinup-group .help-block{
+    color: #c70000;
+    display: block;
+    margin-bottom: 14px;
+    margin-top: 8px;
+    font-size: 12px;
+    text-align: right;
+    font-weight: 500;
+    position: absolute;
+    margin: 0;
+    right: 6px;
+    bottom: -8px;
+    background-color: white;
+    padding: 0px 5px;
+}
+
+.signinup-group .help-block{
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #f7f3fc), color-stop(50%, #fbfbfb));
+    background: -o-linear-gradient(bottom, #f7f3fc 50%, #fbfbfb 50%);
+    background: linear-gradient(0deg, #f7f3fc 50%, #fbfbfb 50%);
+}
+
+
+/* ---
+Error Input color css
+--- */
+.signinup-group.error-group textarea,
+.signinup-group.error-group select,
+.signinup-group.error-group input{
+    border-color: #c70000;
+    background-color: #ffeeee;
+}
+
+
+.signinup-group.error-group .group__label{
+    color: #c70000 !important;
+}
+
+.signinup-group.error-group .help-block{
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #f7f3fc), color-stop(50%, #ffeeee));
+    background: -o-linear-gradient(bottom, #f7f3fc 50%, #ffeeee 50%);
+    background: linear-gradient(0deg, #f7f3fc 50%, #ffeeee 50%);
+}
+
+@media screen and (max-width:576px) {
+
+    .login-commun-btn.s-n-btn,
+    .login-commun-btn {
+        font-size: 16px;
+    }
+
+    .seconde-screen {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        margin: initial;
+        padding: 65px 20px 20px;
+    }
+
+    .sign-in-up-bx .site-info {
+        margin-top: 0px;
+    }
+
+    .login-commun-btn.s-n-btn {
+        padding: 12px 15px;
+    }
+
+    .screen-hed {
+        font-size: 20px;
+    }
+
+    .screen-pera {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .sign-in-up-bx {
+        max-width: 576px;
+    }
+
+    #signinup-popup .modal-dialog {
+        max-width: 576px;
+    }
+
+    #signinup-popup .modal-dialog .modal-content .signinup-popup,
+    #signinup-popup .modal-dialog .modal-content{
+        height: 100%;
+    }
+
+    .signinup-popup .sign-in-up-bx {
+        border-radius: 0px;
+        min-height: 100%;
+    }
+
+    .signinup-popup .first-screen {
+        position: initial;
+    }
+    
+    #signinup-popup.modal.fade .modal-dialog{
+        -webkit-transform: translate(0,0px);
+        -ms-transform: translate(0,0px);
+        transform: translate(0,0px);
+    }
+}

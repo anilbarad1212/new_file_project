@@ -1,0 +1,103 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Contact | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
+        <div class="page-title">Contact</div>
+        <div class="breadcrumb-bx breadcrumb-white">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);">Contact</a>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5">
+    <div class="row justify-content-center align-items-end">
+        <div class="col-xl-3 col-lg-10 col-md-10 col-sm-12">
+            <a class="contact-info hvr-wobble-vertical">
+                <span class="contact-icon">
+                    <img src="{% static 'img/contact/company.svg' %}" alt="">
+                </span>
+                <div class="contact-text">
+                    <h6>Company name</h6>
+                    <p>Jaanviebooks</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-3 col-l g-5 col-md-5 col-sm-6">
+            <a class="contact-info buzz-out-on-hover" href="tel:+916351107800">
+                <span class="contact-icon">
+                    <img src="{% static 'img/contact/phone-call.svg' %}" alt="">
+                </span>
+                <div class="contact-text">
+                    <h6>Call Us</h6>
+                    <p>+91 6351107800</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-3 col-lg-5  col-md-5 col-sm-6">
+            <a class="contact-info bob-on-hover" href="mailto:info@eduindialive.com">
+                <span class="contact-icon">
+                    <img src="{% static 'img/contact/email.svg' %}" alt="">
+                </span>
+                <div class="contact-text">
+                    <h6>Email Us</h6>
+                    <p>info@Jaanviebooks.com</p>
+                </div>
+            </a>
+        </div>
+        <!-- <div class="col-xl-9 col-lg-10 col-md-10 col-sm-12">
+            <a class="contact-info">
+                <span class="contact-icon">
+                    <img src="{% static 'img/contact/location.svg' %}" alt="">
+                </span>
+                <div class="contact-text">
+                    <h6>Main Office</h6>
+                    <p>PM Communications, 6th Floor, Zydus Tower, Astron Tower, Iskcon Cross Rd, Satellite, Ahmedabad, Gujarat 380015</p>
+                </div>
+            </a>
+        </div> -->
+    </div>
+</section>
+
+<section class="container py-5">
+    <div class="row justify-content-center align-items-center px-3">
+        <div class="col-md-6 col-lg-6 col-xl-4 p-0 order-2 order-md-1">
+            <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.892118533282!2d72.50579887378696!3d23.027732979170164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4ebf293721%3A0x5495cb384b446dca!2sPm%20Communications!5e0!3m2!1sen!2sin!4v1681807106343!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-4 p-0 order-1 order-md-2">
+            <form id="custom-form" class="custom-form row m-0">
+                <div class="col-12">
+                    <h5 class="contact-heading">Send us a Message</h5>
+                </div>
+                <div class="custom-form__group col-sm-6">
+                    <input type="text" name="fname" id="fname" placeholder=" " required>
+                    <label class="group__label" for="fname">First Name</label>
+                </div>
+                <div class="custom-form__group col-sm-6">
+                    <input type="text" name="lname"  id="lname" placeholder=" " required>
+                    <label class="group__label" for="lname">Last Name</label>
+                </div>
+                <div class="custom-form__group  col-sm-12">
+                    <input type="email" name="email"  id="email" placeholder=" " required>
+                    <label class="group__label" for="email">Email</label>
+                </div>
+                <div class="custom-form__group col-sm-12">
+                    <input type="text" name="phone"  id="phone" maxlength="10" placeholder=" " required>
+                    <label class="group__label" for="phone">Phone</label>
+                </div>
+                <div class="custom-form__group col-12">
+                    <textarea  name="message"  rows="3"  id="Message" placeholder=" " required></textarea>
+                    <label class="group__label" for="Message">Message</label>
+                </div>
+                <button class="common-btn mt-3 slide_right"><span>Submit</span></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock designsection %}

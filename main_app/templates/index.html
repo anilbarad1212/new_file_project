@@ -1,0 +1,382 @@
+{% extends 'inc.html' %}
+{% load static %}
+{% block title %} Jaanviebooks {% endblock title %}
+
+
+{% block designsection %}
+
+<!-- Home First section -->
+<section class="home-first-section">
+    <div class="mx-auto" style="max-width:1920px;width:100%;">
+        <div class="row  mx-0 justify-content-center  align-items-center">
+
+            <div class="col-xl-7 col-sm-8 px-0 ep-st owl-s2-hover">
+                <div class="youtube-slider owl-carousel owl-theme owl-s2">
+
+                    <div class="video-slider">
+                        <iframe src="https://www.youtube.com/embed/Nw3ipOyDoQc?enablejsapi=1"
+                            title="#EkBharatShreshthaBharat की भावना हमारे देश को मज़बूती देती है।" frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <!-- {% for image in main_slider %}
+                        <div class="video-slider"> 
+                            <img class="main-img" src="{{image.slider_image.url}}" alt="">
+                        </div>
+                        {% endfor %} -->
+                    <div class="video-slider">
+                        <iframe src="https://www.youtube.com/embed/yf34ZISRBwg?enablejsapi=1"
+                            title="How can one remain motivated during exams? Know it from PM Modi…" frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div class="video-slider">
+                        {% for bn in banner_videos %}
+                        poster="{% static 'img/jotoboto-video-2.jpg' %}"
+                        <video id="home-video{{bn.id}}" onloadstart="this.volume=0.2" preload controls
+                            disablepictureinpicture controlslist="nodownload noremoteplayback noplaybackrate">
+                            <source src="{{bn.video.url}}" type="video/mp4">
+                        </video>
+                        <div class="video-slider-home" id="play-video{{bn.id}}">
+                            <i class='bx bx-play'></i>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4">
+                <div class="freedemopopup-bx">
+                    <h3>Login</h3>
+                    <p>Jaanviebooks Can Make A Difference!</p>
+                    <form class="row mx-0" method="POST">
+                        {% csrf_token %}
+                        <div class="custom-form__group col-12">
+                            <input type="text" id="index-email" placeholder=" ">
+                            <label class="group__label">Email</label>
+                            <div id="email-error" class="help-block d-none"></div>
+                        </div>
+
+                        <div class="custom-form__group col-12">
+                            <input type="password" id="index-password" placeholder=" ">
+                            <label class="group__label">Password</label>
+                            <i class="view-pass fa fa-eye-slash" aria-hidden="true"></i>
+                            <div id="password-error" class="help-block d-none"></div>
+                        </div>
+
+                        <button type="button" class="common-btn mt-2" id="login-button"><span>Proceed</span></button>
+                        <button class="fmp-trigger d-none" type="button" id="flash-message"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Cousers Slider Section-->
+<section class="pt-sm-4 pt-5 pb-2">
+    <div class="container-lg pt-2">
+        <div class="owl-carousel owl-theme" id="featuredcousersslider">
+            {% for book in books %}
+            <a href="{% url 'book-detail' book.id %}">
+                <div class="book-container-new">
+                    <div class="book-big-new">
+                        <img class="main-img" src="{{book.book_image.url}}" alt="">
+                        <img class="main-img" src="{{book.book_image.url}}" alt="">
+                    </div>
+                    <div class="courses-v-text">
+                        <h6>Standard {{book.standard}}<sup>th</sup></h6>
+                        <!-- <p>Social Science</p> -->
+                        <!-- <span class="v-std">8<sup>th</sup></span> -->
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+
+            <!-- <a href="javascript:void(0);">
+                <div class="book-container-new">
+                    <div class="book-big-new">
+                        <div class="main-img loader-design"></div>
+                        <div class="main-img loader-design"></div>
+                    </div>
+                    <div class="courses-v-text">
+                        <p class="loader-design-h"></p>
+                    </div>
+                </div>
+            </a> -->
+
+        </div>
+        <!-- <a class="cm-btn" href="javascript:void(0)"><span>View More</span></a> -->
+    </div>
+</section>
+
+<!-- Subscribe Section -->
+<section class="py-4 d-md-none">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11 col-12">
+                <div class="subscribe-bx">
+                    <p><span>Jaanviebooks</span> can make a difference!</p>
+                    <div class="subscribe-last-bx">
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#signinup-popup">Login</a>
+                        <a href="https://classrooms.eduindialive.com/" target="_blank">Go to Classroom</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- reviwes section -->
+<section class="pt-1 pb-5">
+    <div class="container-lg pb-3">
+        <div class="section-heding-bx pb-3  wow zoomIn">
+
+            <h3>Select your course<!-- Review <img src="/jb-img/star.png" alt=""> --></h3>
+            <!-- <p>It is really important for Eduindialive to obtain feedback from the parents to understand where our strengths lie and also the areas we need to improve. your feedback supports us in making changes to improve school for the better.</p> -->
+        </div>
+        <div class="reviewslider owl-carousel owl-theme  wow fadeIn" data-wow-delay="0.3s" id="reviewslider">
+            {% for oc in our_courses %}
+            <a href="{% url 'courses-pdf' oc.id %}"><div class="review-bx read-more-tst" data-id="{{oc.id}}">
+                <div class="review-text-bx">
+                    <img src="{% static 'img/quote-two.png' %}?v=1" alt="">
+                    <p>{{oc.course_discriptions}}</p>
+                    <div class="review-rm-btn">Click here</div>
+                    <h6>{{oc.course_name}}</h6>
+                    <!-- <span>10th Student</span> -->
+                </div>
+                <img class="riv-img" src="{{oc.course_images.url}}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+    </div></a>
+</section>
+
+
+<!-- <section class="py-5">
+    <div class="container-lg ">
+        <div class="row about-home-row align-items-center justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6">
+                <img class="wow fadeInLeft" data-wow-delay="0.4s" src="{% static 'img/profile2.jpeg' %}" alt="">
+            </div>
+            <div class="col-xl-7 col-lg-8 col-md-7">
+                <div class="px-3">
+                    <div class="highlights-bx wow fadeIn" data-wow-delay="0.4s">
+                        <img class="rotate-first" src="{% static 'img/quote-one.png' %}" alt="">
+                        Hindi Is Not Only A Language For Me <br> It Is My <span>Soul</span> My <span>Passion</span> And My <span>Existence.</span>
+                        <img class="rotate-last" src="{% static 'img/quote-one.png' %}" alt="" >
+                    </div>
+                </div>
+
+                <p>I am Tripti Joshi, working from last 22 years as a senior Hindi teacher and facilitator. I have worked with National curriculum and presently I am teaching International curriculum (IGCSE, IB ) I also cater to IB Hindi A Self-taught students. I am an IB examiner. I have the experience of teaching both HL and SL level. I guide students for Hindi Extended Essay as well. I have worked with St. Mary’s Junior college, Kalina , Santacruz , Mumbai, Aditya Birla World Academy, Mumbai, Dhiru Bhai Ambani International School, Mumbai and presently working in Singapore International School, Mumbai.</p>
+                
+                <a class="cm-btn mt-4" href="{% url 'about' %}"><span>Read More</span></a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Call Banner Section -->
+<!-- <section class="call-banner ofh">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="offset-lg-6 col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                <div class="call-banner-txt">
+                    <p>The succinct but wholesome audios provide students learning at their fingertips. The audios are easily accessible and available at economical rates. Watch them and get closer to your goal of getting good marks in the examinations.</p>
+                    <a class="common-btn common-btn-two" href="javascript:void(0);" data-toggle="modal" data-target="#signinup-popup"><span>Login</span></a>
+                    <p>Learning after you know it, is what really counts. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="banner-slider-section">
+    <div class="banner-slider owl-carousel owl-theme owl-s2" id="banner-slider">
+        {% for so in slider_one %}
+        <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{{so.slider_image.url}}" alt="">
+        </a>
+        {% endfor %}
+        <!-- <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{% static 'img/banner/banner-2.jpg' %}" alt=""> 
+        </a>
+        <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{% static 'img/banner/banner-3.jpg' %}" alt=""> 
+        </a>
+        <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{% static 'img/banner/banner-4.jpg' %}" alt=""> 
+        </a> -->
+    </div>
+    <img style="width: 100%;height: 50px;" src="{% static 'img/roubfrvue.png' %}" alt="">
+</section>
+
+
+<!-- <div class="call-review-popup" data-toggle="modal" data-target="#review-modal" hidden></div> -->
+<!-- Banner-Two Section -->
+<!-- <section class="bg-lc ofh">
+    <div class="container-lg">
+        <div class="row align-items-center">
+            <div class="col-lg-6 banner-two">
+                <h3>Learn without Limits</h3>
+                <p>We want education to reach homes<br>of every child so that it becomes<br>accessible at their fingertips.</p>
+            </div>
+            <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.4s">
+                <img style="width:100%" src="{% static 'img/Learn-Limit.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- <section class="banner-slider-section"> -->
+<!-- <div class="banner-slider owl-carousel owl-theme owl-s2" id="banner-slider-two"> -->
+<!-- {% for st in slider_two %}
+        <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{{st.slider_image.url}}" alt=""> 
+        </a>
+        {% endfor %} -->
+<!-- <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{% static 'img/banner/banner-2.jpg' %}" alt=""> 
+        </a>
+        <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{% static 'img/banner/banner-3.jpg' %}" alt=""> 
+        </a>
+        <a href="javascript:void(0);" class="banner-slider-item">
+            <img src="{% static 'img/banner/banner-4.jpg' %}" alt=""> 
+        </a> -->
+<!-- </div> -->
+<!-- <img style="width: 100%;height: 50px;" src="{% static 'img/roubfrvue.png' %}" alt=""> -->
+<!-- </section> -->
+
+<!-- <section class="banner-img-section">
+    <a href="javascript:void(0);" class="banner-img-item">
+        <img src="{% static 'img/Blue-Illustration-Contest-Banner-without.jpg'%}?v=2" alt=""> 
+    </a>
+    <img class="banner-inner-img" src="{% static 'img/logo/favicon.png'%}" alt="">
+    <img style="width: 100%;height: 50px;" src="{% static 'img/roubfrvue.png' %}" alt="">
+</section> -->
+
+
+<!-- Certifications section -->
+<section class="pt-1 pb-5">
+    <div class="container-lg">
+        <div class="section-heding-bx pb-3  wow zoomIn">
+            <h3>We <span class="highlight-text">Promote</span></h3>
+        </div>
+
+        <div class="d-none d-lg-block">
+            <div class="certi-bx wow fadeIn" data-wow-delay="0.3s">
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/Ek-Bharat-Shreshtha-Bharat.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/Digital_India.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/Make-In-India.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/swachh-bharat-abhiyan.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/startupindia.jpg' %}" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="d-block d-lg-none">
+            <div class="certi-bx-2 owl-carousel owl-theme wow fadeIn" data-wow-delay="0.3s" id="certi-slider">
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/Ek-Bharat-Shreshtha-Bharat.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/Digital_India.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/Make-In-India.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/swachh-bharat-abhiyan.jpg' %}" alt="">
+                </a>
+                <a href="javascript:void(0);">
+                    <img src="{% static 'img/icon-logo/startupindia.jpg' %}" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Subscribe Section -->
+<section class="pb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11 col-12">
+                <div class="subscribe-bx">
+                    <p><span>Jaanviebooks</span> can make a difference!</p>
+                    <div class="subscribe-last-bx">
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#signinup-popup">Login</a>
+                        <a href="https://classrooms.eduindialive.com/" target="_blank">Go to Classroom</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Full Review Modal -->
+<div class="modal fade full-review-modal" id="review-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered review-in-details">
+        <!-- <div class="modal-content">
+            <div class="modal-body pt-2 pb-4">
+                <span class="close-icon" data-dismiss="modal" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"  stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+                    </svg>
+                </span>
+                <div class="review-popup mt-2">
+                    <img src="{% static 'img/user-profile.jpg' %}" alt="">
+                    <h3>Name Here ...</h3>
+                    <p>The vijaygiri Filmos brand currently rests on two commercial pillars: the movie business and the just-launched yet incredibly promising digital company. We have established stronger foundations while consistently raising industry standards thanks to our content-led business approach. We still consider telling stories to be our primary area of competence.</p>
+                    <p>In the film industry, we have opted to concentrate our efforts and resources on creating rich story content films rather than just star attractions. This is now accomplished through a meticulous, creative collaboration process, which has caused us to become extremely picky about the projects we commission.</p>
+                    <p>People's worldviews evolve along with the times. We work to provide content that captivates and entices consumers by matching our goals to their changing needs. Our stories, told to viewers in the most enticing manners, will serve as our legacy. We keep delivering the same because we know what works and put our creative zeal into all we do.</p>
+                    <p>To preserve our position as the industry leader, we would like to appreciate every one of our employees' contributions.</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- <script>
+  const video = document.getElementById("home-video");
+  const circlePlayButton = document.getElementById("play-video");
+
+  function togglePlay() {
+      if (video.paused || video.ended) {
+          video.play();
+      } else {
+          video.pause();
+      }
+  }
+
+  circlePlayButton.addEventListener("click", togglePlay);
+  video.addEventListener("playing", function () {
+      circlePlayButton.style.opacity = 0; 
+      // video.muted = false;
+  });
+  video.addEventListener("pause", function () {
+      circlePlayButton.style.opacity = 1;
+  });
+
+  video.addEventListener('ended', function() {
+      video.load();
+      video.autoplay=false;
+  });
+</script> -->
+
+{% endblock designsection %}

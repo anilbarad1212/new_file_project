@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} About | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
+        <div class="page-title">About</div>
+        <div class="breadcrumb-bx breadcrumb-white">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);">About</a>
+        </div>
+    </div>
+</section>
+
+<section class="legal-main">
+    <div class="container-lg pb-5 pt-5">
+
+        <div class="row about-home-row justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 mb-md-3">
+                <img class="wow fadeInLeft" data-wow-delay="0.4s" src="{% static 'img/profile2.jpeg' %}" alt="">
+            </div>
+            <div class="col-xl-9 col-lg-8 col-md-7">
+                <div class="px-3">
+                    <div class="highlights-bx wow fadeIn" data-wow-delay="0.4s">
+                        <img class="rotate-first" src="{% static 'img/quote-one.png' %}" alt="">
+                            Hindi Is Not Only A Language For Me <br> It Is My <span>Soul</span> My <span>Passion</span> And My <span>Existence.</span>
+                        <img class="rotate-last" src="{% static 'img/quote-one.png' %}" alt="">
+                    </div>
+                </div>
+
+                <p>I am Tripti Joshi, working from last 22 years as a senior Hindi teacher and facilitator. I have worked with National curriculum and presently I am teaching International curriculum (IGCSE, IB ) I also cater to IB Hindi A Self-taught students. I am an IB examiner. I have the experience of teaching both HL and SL level. I guide students for Hindi Extended Essay as well. I have worked with St. Mary’s Junior college, Kalina , Santacruz , Mumbai, Aditya Birla World Academy, Mumbai, Dhiru Bhai Ambani International School, Mumbai and presently working in Singapore International School, Mumbai.</p>
+            </div>
+            <div class="col-12">
+                <p>I have done my post-graduation with Hindi and Philosophy , B.Ed. IGCSE and IB Trained . At present I am pursuing my P.HD in Hindi.</p>
+                <p>I am an active member of Rashtra Bhasha Prachar Sabha Samiti Vardha( Mumbai) , the institution recognised my efforts by awarding me with the “Outstanding Teacher Award”. I have also been awarded with the same honour by my current school.</p>
+                <p>I have published two books Of IGCSE Hindi listening for grade 9th and 10th. My next addition for grade 10th Reading and writing, Grade 11th Reading and Writing and Listening is in process and by October, 2018 is expected to be published.</p>
+                <p>I write Hindi poem, Hindi skit. I also translate. Hindi anchoring is my interest as well. I possess a natural flair for language as I can fluently speak and write Sanskrit, Gujarati, Marathi and English.</p>
+                <p>Our National Language is our identity which gives us recognition and honour. I never bounded myself to the syllabus, rather encouraged student’s higher order thinking by initiating class discussions related to local and global issues.</p>
+                <p>In keeping with the IB philosophy of “Think Global, Act Local”, I believe that adopting the international way of thinking is acceptable, however, one must not forget the values of their own cultural heritage</p>
+                <p>Finally, being a literate is not an accomplishment, but being learned is a greater achievement and by that being a good human being is the greatest success of the life, which will be remembered forever and ever</p>
+                <p>JAI HIND</p>
+                <p class="text-right">Dhanyavaad </br>Tripti Joshi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock designsection %}

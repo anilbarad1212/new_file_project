@@ -1,0 +1,359 @@
+{% load static %}
+{% load socialaccount %}
+<div class="sign-in-up-bx">
+    
+    <div class="first-screen screen-trigger" id="first-screen">
+
+        <span class="sign-close-icon popup-close-icon" data-dismiss="modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"  stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <a class="logo-img" href="{% url 'home'%}">
+            <img src="{% static 'img/logo/favicon.jpg' %}">
+        </a>
+
+        <a class="logo-img popup-login-img" href="javascript:void(0);">
+            <img src="{% static 'img/logo/favicon.jpg' %}">
+        </a>
+
+        <a class="login-commun-btn facebook-btn" href="javascript:void(0);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd" />
+            </svg>
+            <span>Continue with Facebook</span>
+        </a>
+
+       <!-- <a class="login-commun-btn instagram-btn" href="javascript:void(0);">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" />
+                <path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z" />
+            </svg>
+            <span>Continue with Instagram</span>
+        </a>-->
+ 
+        <a class="login-commun-btn google-btn" href="javascript:void(0);">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <path d="M473.16 221.48l-2.26-9.59H262.46v88.22H387c-12.93 61.4-72.93 93.72-121.94 93.72-35.66 0-73.25-15-98.13-39.11a140.08 140.08 0 01-41.8-98.88c0-37.16 16.7-74.33 41-98.78s61-38.13 97.49-38.13c41.79 0 71.74 22.19 82.94 32.31l62.69-62.36C390.86 72.72 340.34 32 261.6 32c-60.75 0-119 23.27-161.58 65.71C58 139.5 36.25 199.93 36.25 256s20.58 113.48 61.3 155.6c43.51 44.92 105.13 68.4 168.58 68.4 57.73 0 112.45-22.62 151.45-63.66 38.34-40.4 58.17-96.3 58.17-154.9 0-24.67-2.48-39.32-2.59-39.96z" />
+            </svg>
+            <span>Continue with Google</span>
+        </a>
+                  
+        <a class="login-commun-btn sign-up-btn trigger-btn" data-content="create-screen-1"
+            data-title="create-screen-1" href="javascript:void(0);" href="javascript:void(0);">
+            <span>Sign Up</span>
+        </a>
+
+        <a class="login-commun-btn sign-in-btn trigger-btn" style="background: #00000012;" data-content="login-screen"
+            data-title="login-screen" href="javascript:void(0);">
+            <span>Sign In</span>
+        </a>
+
+        <div class="site-info">
+            © Jaanviebooks 2023
+        </div>
+
+        <a class="sign-back-btn" href="{% url 'home'%}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Chevron Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144"/></svg>Back To Home
+        </a>
+    
+    </div>
+
+    <div class="seconde-screen screen-trigger active" id="login-screen">
+
+        <!-- <span class="back-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span> -->
+
+        <!-- <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span> -->
+
+        <a class="logo-img" href="{% url 'home'%}">
+            <img src="{% static 'img/logo/favicon.jpg' %}">
+        </a>
+
+        <a class="logo-img popup-login-img" href="javascript:void(0);">
+            <img src="{% static 'img/logo/favicon.jpg' %}">
+        </a>
+
+        <span class="sign-close-icon popup-close-icon" data-dismiss="modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"  stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <h3 class="screen-hed">Register</h3>
+        <a id="hide-facebook" class="login-commun-btn google-btn" href="{% provider_login_url 'google' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <path
+                    d="M473.16 221.48l-2.26-9.59H262.46v88.22H387c-12.93 61.4-72.93 93.72-121.94 93.72-35.66 0-73.25-15-98.13-39.11a140.08 140.08 0 01-41.8-98.88c0-37.16 16.7-74.33 41-98.78s61-38.13 97.49-38.13c41.79 0 71.74 22.19 82.94 32.31l62.69-62.36C390.86 72.72 340.34 32 261.6 32c-60.75 0-119 23.27-161.58 65.71C58 139.5 36.25 199.93 36.25 256s20.58 113.48 61.3 155.6c43.51 44.92 105.13 68.4 168.58 68.4 57.73 0 112.45-22.62 151.45-63.66 38.34-40.4 58.17-96.3 58.17-154.9 0-24.67-2.48-39.32-2.59-39.96z" />
+            </svg>
+            <span>Continue with Google</span>
+        </a>
+        <form class="signinup-group" id="login_form" metnod="POST">
+           {% csrf_token %}
+            <div class="signinup-group form-group">
+                <input type="email" name="email" id="si-index-email" placeholder=" ">
+                <label class="group__label" for="si-index-email">Email</label>
+                <div id="si-email-error" class="help-block d-none"></div>
+            </div>
+
+            <div class="signinup-group form-group">
+                <input type="password" name="password" id="si-index-password" placeholder=" ">
+                <label class="group__label" for="si-index-password">Password</label>
+                <i class="view-pass fa fa-eye-slash" aria-hidden="true"></i>
+                <div id="si-password-error" class="help-block d-none"></div>
+            </div>
+
+            <div class="signinup-group form-group">
+                <input type="password" name="si-cnf-password" id="si-cnf-password" placeholder=" ">
+                <label class="group__label" for="si-cnf-password">Confirm Password</label>
+                <i class="view-pass fa fa-eye-slash" aria-hidden="true"></i>
+                <div id="si-cnf-password-error" class="help-block d-none"></div>
+            </div>
+
+            <div class="mt-3">
+                <input class="remember-input" type="checkbox" id="remember" name="remember" placeholder="">
+                <label class="remember-lable" for="remember" class="m-0">Remember Me</label>
+            </div>
+
+            <!-- <a class="login-commun-btn forgotten-btn trigger-btn" style="background: #00000012;" data-content="forgotten" data-title="forgotten" href="javascript:void(0);">
+                <span>Forgotten password?</span>
+            </a> -->
+
+            <button type="button" class="login-commun-btn s-n-btn" id="si-login-button"><span>Login</span></button>
+            <button class="fmp-trigger d-none" type="button" id="si-flash-message"></button>
+
+        </form>
+            <a class="sign-back-btn" href="{% url 'home'%}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Chevron Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144"/></svg>Back To Home
+            </a>
+    </div>
+
+    <div class="seconde-screen screen-trigger" id="forgotten">
+
+        <span class="back-icon trigger-btn" data-content="login-screen" data-title="login-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span>
+
+        <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <h3 class="screen-hed">Forgotten password?</h3>
+        <p class="screen-pera">Enter your email address, and we'll send you a code to help you access your account. If you use  facebook Instagram or Google to log in, reset your password for that account instead.</p>
+
+        <form class="signinup-group" id="forgot_password" metnod="POST">
+
+            <div class="signinup-group form-group">
+                <input type="email" name="email" id="forgot_email" placeholder=" ">
+                <label class="group__label" for="forgot_email">Email</label>
+            </div>
+
+            <button class="login-commun-btn s-n-btn">
+                <span>Find Account</span>
+            </button>
+
+        </form>
+    </div>
+
+    <div class="seconde-screen screen-trigger" id="create-screen-1">
+
+        <span class="back-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span>
+
+        <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <a class="login-commun-btn forgotten-btn box-border trigger-btn" href="javascript:void(0);"
+            data-content="create-screen-2" data-title="create-screen-2">
+            <span>Create new account</span>
+        </a>
+
+        <a class="login-commun-btn forgotten-btn box-border trigger-btn" href="javascript:void(0);"
+            data-content="login-screen" data-title="login-screen">
+            <span>Already have account</span>
+        </a>
+
+
+    </div>
+
+    <div class="seconde-screen screen-trigger" id="create-screen-2">
+
+        <span class="back-icon trigger-btn" data-content="create-screen-1" data-title="create-screen-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span>
+
+        <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <h3 class="screen-hed">What's your email address?</h3>
+        <p class="screen-pera">Enter the email address where you can be contacted. This email address will be used
+            for login and account management, and it won't be public.</p>
+
+        <form class="signinup-group" id="signup_step1" method="POST">
+
+            <div class="signinup-group form-group">
+                <input type="email" name="cemail" id="cemail" placeholder=" ">
+                <label class="group__label" for="cemail">Email</label>
+            </div>
+
+            <button type="button" class="login-commun-btn s-n-btn trigger-btn" data-content="create-screen-3" data-title="create-screen-3"><span>Next</span></button>
+
+        </form>
+    </div>
+
+    <div class="seconde-screen screen-trigger" id="create-screen-3">
+
+        <span class="back-icon trigger-btn" data-content="create-screen-2" data-title="create-screen-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span>
+
+        <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <h3 class="screen-hed">Enter your name</h3>
+        <p class="screen-pera">This name will be used for account recovery and for communication about your account. It won't be public.</p>
+
+        <form class="signinup-group">
+
+            <div class="signinup-group form-group" >
+                <input type="text" name="cfirst_name" id="cfname" placeholder=" ">
+                <label class="group__label" for="cfname">First Name</label>
+            </div>
+
+            <div class="signinup-group form-group">
+                <input type="text" name="clast_name" id="clname" placeholder=" ">
+                <label class="group__label" for="clname">Last Name</label>
+            </div>
+
+            <div class="signinup-group form-group">
+                <input type="text" name="cmobile" id="cmobile" maxlength="10" placeholder=" ">
+                <label class="group__label" for="cmobile">Phone</label>
+            </div>
+
+            <button type="button" class="login-commun-btn s-n-btn trigger-btn" data-content="create-screen-4" data-title="create-screen-4"><span>Next</span></button>
+        </form>
+    </div>
+
+    <div class="seconde-screen screen-trigger" id="create-screen-4">
+
+        <span class="back-icon trigger-btn" data-content="create-screen-3" data-title="create-screen-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span>
+
+        <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <h3 class="screen-hed">Create a password</h3>
+        <p class="screen-pera">Create a password with at least 6 letters and numbers. It should be something that others can't guess.</p>
+
+        <form class="signinup-group">
+            <div class="signinup-group form-group">
+                <input type="password" name="cpassword" id="cpassword" placeholder=" ">
+                <label class="group__label" for="cpassword">Password</label>
+                <i class="view-pass fa fa-eye-slash" aria-hidden="true"></i>
+            </div>
+
+            <div class="signinup-group form-group">
+                <input type="password" name="fcpassword" id="fcpassword" placeholder=" ">
+                <label class="group__label" for="fcpassword">Confirm Password</label>
+                <i class="view-pass fa fa-eye-slash" aria-hidden="true"></i>
+            </div>
+
+            <button type="button" class="login-commun-btn s-n-btn trigger-btn" data-content="final-screen" data-title="final-screen"><span>Next</span></button>
+
+        </form>
+    </div>
+
+    <div class="seconde-screen screen-trigger" id="final-screen">
+
+        <span class="back-icon trigger-btn" data-content="create-screen-4" data-title="create-screen-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36" d="M328 112L184 256l144 144" />
+            </svg>
+            <span class="back-text">Back</span>
+        </span>
+
+        <span class="sign-close-icon trigger-btn" data-content="first-screen" data-title="first-screen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+            </svg>
+        </span>
+
+        <h3 class="screen-hed">Finish creating your account</h3>
+
+        <form class="signinup-group" id="signup_step4" method="POST">
+            <div class="create-detail">
+                <h6>First Name</h6>
+                <p>First Name Here...</p>
+            </div>
+            <div class="create-detail">
+                <h6>Last Name</h6>
+                <p>Last Name Here...</p>
+            </div>
+
+            <div class="create-detail">
+                <h6>Email Id</h6>
+                <p>Email Id Here...</p>
+            </div>
+
+            <div class="create-detail">
+                <h6>Phone</h6>
+                <p>Phone Numner Here...</p>
+            </div>
+
+            <div class="create-detail">
+                <h6>password</h6>
+                <p class="cdp">········</p>
+            </div>
+
+     
+            <button type="submit" class="login-commun-btn s-n-btn" ><span>Create account</span></button>
+
+            <a class="login-commun-btn forgotten-btn box-border trigger-btn" data-content="create-screen-4" data-title="create-screen-4" href="javascript:void(0);">
+                <span>Back</span>
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

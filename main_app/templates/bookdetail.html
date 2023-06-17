@@ -1,0 +1,113 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Book Details | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left"
+                aria-hidden="true"></i>Go Back</a>
+        <div class="page-title">{{course.course_name}}</div>
+        <div class="breadcrumb-bx breadcrumb-white">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);">{{course.course_name}}</a>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="material-accroding mt-4" id="material-accordion">
+
+            <div class="acc-item">
+                <button hidden="" type="button" id="file-message-popup-button" class="fmp-trigger"></button>
+                <div class="acc-heding" data-toggle="collapse" data-target="#collapse_m1" aria-expanded="true"
+                    aria-controls="collapse_m1" id="heading_m1"><span class="down-icon"></span>
+                    <!-- <div class="material-include">
+                        <span class="include-span"><img src="/static/main_app/img/icons/right.png">8 Topics</span>
+                        <span class="include-span"><img src="/static/main_app/img/icons/right.png">1 Basic Material</span>
+                        <span class="include-span"><img src="/static/main_app/img/icons/right.png">1 premium Material</span>
+                    </div> -->
+                </div>
+                <div id="collapse_m1" class="acc-detail collapse show" aria-labelledby="heading_m1"
+                    data-parent="#material-accordion">
+                    <div class="material-inner">
+                        <div class="row justify-content-end">
+
+                            <div class="topics-bx">
+                                <div class="topics-item">
+                                    {{course.course_discriptions}}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div 
+                                    class="mdetail-list-item mdetail-premium-item vdzxfhbdfymh pr-fldr-dwbload">
+                                    <img style="width: 60px;height: 60px;"
+                                        src="{% static 'icons/zip-folder.png' %}" alt="">
+                                    <div>Download All Files</div>
+                                    <span class="mdetail-download">
+                                        <img src="{% static 'icons/crown.png' %}" alt=""> All Download
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdetail-list-bx">
+                            {% for cp in course_pdfs %}
+                            <div class="mdetail-list-item mdetail-premium-item vdzxfhbdfymh">
+                                <img src="{% static 'icons/pdf.png' %}" alt="">
+                                <div>{{cp.file_name}}</div>
+                                <span file-id="{{cp.id}}" class="mdetail-download download-file">
+                                    <img src="{% static 'icons/crown.png' %}" alt=""> Download
+                                </span>
+
+                            </div>
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <button hidden="" type="button" data-target="#infoutp-popup-md" data-toggle="modal"
+                id="hidden-popup-pl-cnf-msg-btn-md" modal=""></button>
+
+            <!-- cancel Folder Model  -->
+            <!-- data-toggle="modal" data-target="#infoutp-popup" -->
+            <div class="modal fade infoutpModal" id="infoutp-popup-md" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body py-4">
+                            <span class="commun-close-icon comman-closer" data-dismiss="modal" aria-label="Close"
+                                data-toggle="modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368">
+                                    </path>
+                                </svg>
+                            </span>
+                            <input type="number" hidden="" id="hidden-cnf-plan-buy-in-md-id">
+                            <input type="text" hidden="" id="hidden-cnf-plan-buy-in-md-utype">
+                            <h3>Upgrade To Premium?</h3>
+                            <p>Do you want to upgrade the premium membership?</p>
+                            <div class="text-center">
+                                <button class="no-btn" type="button" data-dismiss="modal" id="yes-premium-needed-md"
+                                    aria-label="Close">Yes</button>
+                                <button class="cancelBtn" type="button" data-dismiss="modal"
+                                    aria-label="Close">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock designsection %}

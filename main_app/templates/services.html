@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Services | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
+        <div class="page-title">Services</div>
+        <div class="breadcrumb-bx breadcrumb-white">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);">Services</a>
+        </div>
+    </div>
+</section>
+
+<section class="legal-main">
+    <div class="container-lg pb-5 pt-5">
+
+        <div class="row about-home-row justify-content-center">
+            <div class="col-lg-4 col-md-5 col-sm-6 mb-md-3">
+                <img class="wow fadeInLeft" data-wow-delay="0.4s" src="{% static 'img/services.png' %}" alt="">
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <p>In the Era of digital technology education world  must explore. Our mission is to give a new change and qualitative education which will bridge the gape of technology and live education. eduindia live promise to fulfill any requirement in the area of education and excellence.</p>
+                <p><strong>Our mission is to provide</strong></p>
+                <ul class="legal-ul ul-dick ul-li-inline">
+                    <li>● High tech online teachin</li>
+                    <li>● course work (during  the vacation / regular basis)</li>
+                    <li>● recorded lessons</li>
+                    <li>● Resources- books, notes, mind maps, test series, assessments</li>
+                    <li>● Translation work - Hindi,Marathi, Sanskrit, Gujarati and English</li>
+                    <li>● experienced ,highly qualified educators</li>
+                    <li>● last minute exam preparation</li>
+                    <li>● Guidence in EE, TOK,  CAS</li>
+                    <li>● Curriculum development</li>
+                    <li>● consultation in school development</li>
+                    <li>● subject specific workshops</li>
+                    <li>● Coaching Expats</li>
+                    <li>● Consultation in any field of education and media.</li>
+                    <li>● Event management</li>
+                    <li>● Media release</li>
+                    <li>● Press release</li>
+                    <li>● Dialog writing</li>
+                    <li>● Script writing</li>
+                    <li>● Annual function organizing with live telecast</li>
+                    <li>● Anchoring</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock designsection %}

@@ -1,0 +1,124 @@
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+    var options = {
+
+        // Enter the Key ID generated from the Dashboard
+        key: "{{key}}",
+
+        // Amount is in currency subunits.
+        // Default currency is INR. Hence,
+        // 50000 refers to 50000 paise
+        amount: "{{payment.amount}}",
+        currency: "INR",
+
+        // Your/store name.
+        name: "Freelancer Razorpay",
+        'modal': {
+            'ondismiss': function () {
+                var order_id = "{{ payment.id }}";
+                $.ajax({
+                    url: '/delete-payment-data/',
+                    method: "POST",
+                    dataType: "json",
+                    data: {
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                        order_id: order_id,
+                    },
+                    success: function (data) {
+                     
+                        return false;
+                    },
+                });
+            }
+        },
+
+        // Pass the `id` obtained in the response of Step 1
+        order_id: "{{ payment.id }}",
+        callback_url: "/plan-purchase-succsess/",
+        handler: function (response) {
+            var payment_id = response.razorpay_payment_id;
+            var order_id = response.razorpay_order_id;
+
+
+            // alert(response.razorpay_order_id);
+            // alert(response.razorpay_signature);
+            $.ajax({
+                url: '/plan-purchase-succsess/',
+                method: "POST",
+                dataType: "json",
+                data: {
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                    payment_id: payment_id,
+                    order_id: order_id,
+                },
+                success: function (data) {
+                    if (data.message === 'ok') {
+                        if (data.redirect_path == 'no-details' && data.redirect_id == 0) {
+                            window.location.href = '/account/?activateTab=manage';
+                        }
+                        else if (data.redirect_path == 'no-upgrade-memberhip' && data.redirect_id == 0) {
+                            window.location.href = '/account/?activateTabmeMbership=membership';
+
+                        }
+                        else if (data.redirect_path == 'no-memberhip' && data.redirect_id == 0){
+                                window.location.href = '/account/?activateTabNew=mymembership';
+                        }    
+
+                        else if (data.redirect_path == 'company-details' && data.redirect_id == 0){
+                            window.location.href = '/company-account/?upgrade-corporate-plan=upgrade-corporate-plan';
+                        }
+                        else if(data.redirect_path == 'upgrade_company-details' && data.redirect_id == 0){
+                            window.location.href = '/company-account/?upgrade-corporate-plan=upgrade-corporate-plan';
+                        }
+                         else {
+                            var redirect_path = data.redirect_path
+                            var redirect_id = data.redirect_id;
+                            window.location.href = '/' + redirect_path + '/' + redirect_id;
+                        }
+                    } else {
+                        window.location.href = '/';
+                    }
+                    return false;
+                },
+            });
+        },
+        // prefill: {
+        //     name: "pm",
+        //     email: "pmcommu@gmail.com",
+        //     contact: "9998089890"
+        // },
+        theme: {
+            color: "#3399c"
+        }
+    };
+
+    // initialise razorpay with the options.
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response) {
+        var order_id = "{{ payment.id }}";
+        alert(order_id,'*****')
+                $.ajax({
+                    url: '/delete-payment-data/',
+                    method: "POST",
+                    dataType: "json",
+                    data: {
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                        order_id: order_id,
+                    },
+                    success: function (data) {
+                     
+                        return false;
+                    },
+        });
+
+    });
+
+
+
+    // add event listener to the payment button. -->
+    document.getElementById("rzp-button3").onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+    };
+</script>

@@ -1,0 +1,18 @@
+{% extends 'inc.html' %}
+{% load static %}
+{% block title %} Login | Jaanviebooks {% endblock title %}
+
+
+{% block designsection %}
+<style>
+    body {
+        background: linear-gradient(45deg, #f0f6fe, #faf1fa);
+    }
+    footer,
+    header{
+        display: none !important;
+    }
+</style>
+{% include 'signinup.html' %}
+
+{% endblock designsection %}

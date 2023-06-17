@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Sitemap | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
+        <div class="page-title">Sitemap</div>
+        <div class="breadcrumb-bx breadcrumb-white">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);">Sitemap</a>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container-lg pt-5">
+        <div class="sitemaplinks-bx">
+            <span class="sitemap-heding">Jaanviebooks</span>
+            <ul class="sitemap-ul">
+                <li><a href="{% url 'home' %}"><i class='bx bx-link'></i>home</a></li>
+                <li><a href="{% url 'about' %}"><i class='bx bx-link'></i>About</a></li>
+                <li><a href="{% url 'vision' %}"><i class='bx bx-link'></i>Vision</a></li>
+                <li><a href="{% url 'services' %}"><i class='bx bx-link'></i>Services</a></li>
+                <!-- <li><a href="{% url 'privacy-policy' %}"><i class='bx bx-link'></i>Privacy Policy</a></li>
+                <li><a href="{% url 'terms-conditions' %}"><i class='bx bx-link'></i>Terms & Conditions</a></li> -->
+                <li><a href="javascript:void(0);"><i class='bx bx-link'></i>Privacy Policy</a></li>
+                <li><a href="javascript:void(0);"><i class='bx bx-link'></i>Terms & Conditions</a></li>
+                <li><a href="{% url 'contact' %}"><i class='bx bx-link'></i>Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock designsection %}

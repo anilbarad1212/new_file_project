@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Vision | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
+        <div class="page-title">Vision</div>
+        <div class="breadcrumb-bx breadcrumb-white">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);">Vision</a>
+        </div>
+    </div>
+</section>
+
+<section class="legal-main">
+    <div class="container-lg pb-5 pt-5">
+
+        <div class="row about-home-row justify-content-center">
+            <div class="col-lg-4 col-md-5 col-sm-6 mb-md-3">
+                <img class="wow fadeInLeft" data-wow-delay="0.4s" src="{% static 'img/vision.png' %}" alt="">
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <p>Education is a big responsibility and educator is the builder of young minds because of that education is a noble job. Where the identity of the educator is built and judged by the human cameras (students eyes)</p>
+                <p>My vision is to enhance the technics of education that creat an interest. Which dig out the hidden talent and let the Lerner identity it.</p>
+                <p>It built a self confidence that everyone is unique, everyone's personality has one special  area which is 100%.</p>
+                <p>Everyone can not get 90/98% in the subject but yes everyone can get 100% in their talent area.</p>
+                <p>A Best educator change the world because education is given and taken process. 
+                Holistic development of the education and Lerner is my vision.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock designsection %}

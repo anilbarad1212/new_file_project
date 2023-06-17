@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} Shravan Sarita 8th Standard | Jaanviebooks {% endblock title %}
+
+{% block designsection %}
+<section class="pagenavigation">
+    <img class="pages-bgback" src="{% static 'img/cousers.jpg' %}" alt="">
+    <div class="page-inner-nav">
+        <a href="javascript:void(0);" onclick="history.back()" class="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>Go Back</a>
+        <!-- <div class="page-title">Shravan Sarita</div> -->
+        <div class="breadcrumb-bx breadcrumb-white">
+        <div class="page-title">Shravan Sarita</div>
+        <div class="breadcrumb-bx">
+            <a href="{% url 'home' %}">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="active" href="javascript:void(0);" id="a-st-data">Shravan Sarita 8<sup id="th-id">th</sup></a>
+        </div>
+    </div>
+</section>
+
+<section class="pb-4">
+    <div class="container-xl  pt-3 py-lg-4 px-lg-3 px-0">
+        <div class="book-audio-bx">
+
+            <div class="book-audio-left first-audio">
+                <div class="audio-item-bx loader-design"></div>
+            </div>
+
+            <div class="book-audio-right">
+
+                <div class="index-list-bx">
+                    <div class="index-tag">Shravan Sarita Audio List</div>
+                    <ul class="index-list-ul" id="all-audio-list">
+                        <!-- <li class="active"><a href="javascript:void(0)"><span><ion-icon name="play"></ion-icon></span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos sequi dolor saepe?</a></li>
+                        <li><a href="javascript:void(0)"><span><ion-icon name="play"></ion-icon></span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos sequi dolor saepe?</a></li>  -->
+                        <div class="px-2">
+                            <div class="loader-design-h mt-2"></div>
+                            <div class="loader-design-h"></div>
+                            <div class="loader-design-h"></div>
+                            <div class="loader-design-h"></div>
+                            <div class="loader-design-h"></div>
+                            <div class="loader-design-h"></div>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="px-3">
+            <div class="empty-div-bx">
+                <img src="{% static '/img/empty.png' %}" alt="">
+                <p>You can not seen any standard audio list without login.</p>
+                <a class="cm-btn mt-3" href="javascript:void(0);" data-toggle="modal" data-target="#signinup-popup"><span>Login Now</span></a>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+{% endblock designsection %}
