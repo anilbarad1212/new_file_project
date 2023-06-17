@@ -100,7 +100,8 @@ class BookaudiocopyView(TemplateView):
     template_name = 'book-audio-copy.html'
 
 
-
+class AllCoursesView(TemplateView):
+    template_name = 'courses.html'
 
 def register_user(request):
     email=request.POST.get('email')
@@ -230,3 +231,5 @@ def get_file_url(request):
                 return JsonResponse({'raz': razorcode})
     else:
         return JsonResponse({'msg':'login required'})
+    
+

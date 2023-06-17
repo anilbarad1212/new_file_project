@@ -1050,8 +1050,10 @@
 
 @media screen and (max-width:800px) {
     .logo-link img.main-logo {
-        width: 250px;
+        /* width: 250px; */
+        width: 100px;
         height: 45.45px;
+        object-fit: contain;
     }
 }
 
@@ -1095,8 +1097,10 @@
 
     .logo-link img.responsive-logo-img {
         display: block;
-        width: 130px;
+        /* width: 130px; */
+        width: 100px;
         height: 79.66px;
+        object-fit: contain;
     }
 
     .banner-slider-item {

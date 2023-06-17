@@ -68,7 +68,7 @@
       </div>
       <div class="hrb-btns-bx" id="login-logout-data">
         <!-- data-toggle="modal" data-target="#freedemoModal" -->
-        <a class="hrb-btn free-demo-btn" title="Our Courses" target="_blank" href="https://classrooms.eduindialive.com/"><i class='bx bx-book'></i><span>Our Courses</span></a>
+        <a class="hrb-btn free-demo-btn" title="Our Courses" target="_blank" href="{% url 'all-courses' %}"><i class='bx bx-book'></i><span>Our Courses</span></a>
         <a class="hrb-btn login-up-btn" title="Login" href="javascript:void(0);" data-toggle="modal" data-target="#signinup-popup"><i class='bx bx-user'></i><span>Register</span></a>
         
         <!-- <div class="hrb-btn login-up-btn" title="My Account"><i class='bx bx-user'></i><span>Login</span>
@@ -138,7 +138,7 @@
   <div class="slidemenu">
     <ul>
         <li><a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'home'%}"><span><ion-icon class="sidemenu-menu-icon" name="home-outline"></ion-icon>Home</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-        <li><a class="nav-link" href="https://classrooms.eduindialive.com/" target="_blank"><span><ion-icon class="sidemenu-menu-icon" name="book-outline"></ion-icon>Our Courses</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li><a class="nav-link" href="{% url 'all-courses' %}" target="_blank"><span><ion-icon class="sidemenu-menu-icon" name="book-outline"></ion-icon>Our Courses</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
         <li><a class="nav-link {% if request.path == '/about/' %} active {% endif %}" href="{% url 'about'%}"><span><ion-icon class="sidemenu-menu-icon" name="person-outline"></ion-icon>About</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
         <li><a class="nav-link {% if request.path == '/vision/' %} active {% endif %}" href="{% url 'vision'%}"><span><ion-icon class="sidemenu-menu-icon" name="eye-outline"></ion-icon>Vision</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
         <!-- <li><a class="nav-link {% if request.path == '/services/' %} active {% endif %}" href="{% url 'services'%}"><span><ion-icon class="sidemenu-menu-icon" name="document-text-outline"></ion-icon>Services</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->

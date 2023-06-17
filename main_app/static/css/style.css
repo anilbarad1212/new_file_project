@@ -543,7 +543,7 @@ Header Css
 --- */
 .main-header {
   height: 90px;
-  padding: 0 30px;
+  padding: 0 30px 0 10px;
   position: sticky;
   top: 0;
   left: 0;
@@ -579,7 +579,8 @@ Header Css
 }
 
 .logo-link img.main-logo {
-  width: 290px;
+  /* width: 290px; */
+  width: 100px;
   height: 118.19px;
   -o-object-fit: contain;
   object-fit: contain;
@@ -4176,6 +4177,7 @@ Material Accroding Css
   color: var(--color-4);
   text-transform: capitalize;
   padding: 8px 170px 8px 8px;
+  /* padding: 18px 170px 18px 8px; */
   width: 100%;
   line-height: 1.7;
   border: 1px solid #ebebeb;
@@ -4217,6 +4219,10 @@ Material Accroding Css
   top: 50%;
   transform: translateY(-50%);
 }
+/* .mdetail-list-item span
+{
+ margin-top: 100px;
+} */
 
 .mdetail-premium-item .mdetail-download {
   border-color: #ffb229;

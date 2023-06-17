@@ -44,6 +44,7 @@ urlpatterns = [
     path('bookdetails/',views.BookDetailsView.as_view(),name='bookdetails'),
 
     path('get-file-url/',views.get_file_url,name='get-file-url'),
+    path('all-courses/',views.AllCoursesView.as_view(),name="all-courses")
     
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
